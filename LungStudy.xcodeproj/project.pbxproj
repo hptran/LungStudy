@@ -13,6 +13,8 @@
 		CED705C31B0836AA00B68AAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED705C21B0836AA00B68AAA /* Images.xcassets */; };
 		CED705C61B0836AA00B68AAA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED705C41B0836AA00B68AAA /* LaunchScreen.xib */; };
 		CED705D21B0836AA00B68AAA /* LungStudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED705D11B0836AA00B68AAA /* LungStudyTests.swift */; };
+		CED706131B08391600B68AAA /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED7060B1B08382A00B68AAA /* ResearchKit.framework */; };
+		CED706141B08391600B68AAA /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CED7060B1B08382A00B68AAA /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +25,42 @@
 			remoteGlobalIDString = CED705B51B0836AA00B68AAA;
 			remoteInfo = LungStudy;
 		};
+		CED7060A1B08382A00B68AAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CED706041B08382A00B68AAA /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		CED7060C1B08382A00B68AAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CED706041B08382A00B68AAA /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
+		};
+		CED706151B08391600B68AAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CED706041B08382A00B68AAA /* ResearchKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B183A4731A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CED706171B08391600B68AAA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CED706141B08391600B68AAA /* ResearchKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CED705B61B0836AA00B68AAA /* LungStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LungStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +73,7 @@
 		CED705CB1B0836AA00B68AAA /* LungStudyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LungStudyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED705D01B0836AA00B68AAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED705D11B0836AA00B68AAA /* LungStudyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LungStudyTests.swift; sourceTree = "<group>"; };
+		CED706041B08382A00B68AAA /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED706131B08391600B68AAA /* ResearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +98,7 @@
 		CED705AD1B0836AA00B68AAA = {
 			isa = PBXGroup;
 			children = (
+				CED706041B08382A00B68AAA /* ResearchKit.xcodeproj */,
 				CED705B81B0836AA00B68AAA /* LungStudy */,
 				CED705CE1B0836AA00B68AAA /* LungStudyTests */,
 				CED705B71B0836AA00B68AAA /* Products */,
@@ -112,6 +152,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CED706051B08382A00B68AAA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CED7060B1B08382A00B68AAA /* ResearchKit.framework */,
+				CED7060D1B08382A00B68AAA /* ResearchKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,10 +171,12 @@
 				CED705B21B0836AA00B68AAA /* Sources */,
 				CED705B31B0836AA00B68AAA /* Frameworks */,
 				CED705B41B0836AA00B68AAA /* Resources */,
+				CED706171B08391600B68AAA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CED706161B08391600B68AAA /* PBXTargetDependency */,
 			);
 			name = LungStudy;
 			productName = LungStudy;
@@ -179,6 +230,12 @@
 			mainGroup = CED705AD1B0836AA00B68AAA;
 			productRefGroup = CED705B71B0836AA00B68AAA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CED706051B08382A00B68AAA /* Products */;
+					ProjectRef = CED706041B08382A00B68AAA /* ResearchKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CED705B51B0836AA00B68AAA /* LungStudy */,
@@ -186,6 +243,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CED7060B1B08382A00B68AAA /* ResearchKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ResearchKit.framework;
+			remoteRef = CED7060A1B08382A00B68AAA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CED7060D1B08382A00B68AAA /* ResearchKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ResearchKitTests.xctest;
+			remoteRef = CED7060C1B08382A00B68AAA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CED705B41B0836AA00B68AAA /* Resources */ = {
@@ -232,6 +306,11 @@
 			isa = PBXTargetDependency;
 			target = CED705B51B0836AA00B68AAA /* LungStudy */;
 			targetProxy = CED705CC1B0836AA00B68AAA /* PBXContainerItemProxy */;
+		};
+		CED706161B08391600B68AAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ResearchKit;
+			targetProxy = CED706151B08391600B68AAA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -409,6 +488,7 @@
 				CED705D71B0836AA00B68AAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CED705D81B0836AA00B68AAA /* Build configuration list for PBXNativeTarget "LungStudyTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +497,7 @@
 				CED705DA1B0836AA00B68AAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
