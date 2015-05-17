@@ -22,17 +22,57 @@ class ViewController: UIViewController, ORKTaskViewControllerDelegate {
     }
     
     override func viewDidAppear(animated: Bool) {
+//        presentTask(helloTask)
+        presentTask(consentTask)
+    }
+    
+    private var consentDocument: ORKConsentDocument{
+        let consentDocument = ORKConsentDocument()
+        //prepare consent document (title, signatures,...)
+        
+        
+        //create sections in consent document
+        
+        let section1 = ORKConsentSection(type: ORKConsentSectionType.DataGathering)
+        section1.title = "The title of the section goes here ...";
+        section1.summary = "The summary about the section goes here ...";
+        section1.content = "The content to show in learn more ...";
+        //add sections into consent document
+        consentDocument.sections = [section1]
+        
+        return consentDocument
+    }
+    
+    private var consentTask:ORKTask{
+        var steps = [ORKStep]()
+        //create visual consent step
+        let visualConsentStep = ORKVisualConsentStep(identifier: "visual_consent",document:consentDocument)
+        
+        //add visual consent step into the list of steps
+        steps += [visualConsentStep]
+        
+        //return consent task
+        return ORKOrderedTask(identifier: "consent_task", steps: steps)
+    }
+    
+    //create hello task (for testing)
+    private var helloTask:ORKTask{
         //create a step
         let myStep = ORKInstructionStep(identifier: "intro")
         myStep.title = "Welcome to ResearchKit";
-        //create a task
-        let task = ORKOrderedTask(identifier: "task", steps: [myStep])
+        
+        return ORKOrderedTask(identifier: "task", steps: [myStep])
+    }
+    
+    //present task
+    func presentTask(task:ORKTask){
         //present the task
         let taskViewController = ORKTaskViewController(task: task, taskRunUUID: nil)
         taskViewController.delegate = self
         presentViewController(taskViewController, animated: true, completion: nil)
     }
     
+    //collect results from the presented task
     func taskViewController(taskViewController: ORKTaskViewController,
         didFinishWithReason reason: ORKTaskViewControllerFinishReason,
         error: NSError?) {
@@ -42,6 +82,8 @@ class ViewController: UIViewController, ORKTaskViewControllerDelegate {
             // Then, dismiss the task view controller.
             dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
 
 }
 
