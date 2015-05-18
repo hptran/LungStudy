@@ -10,7 +10,8 @@ import UIKit
 import ResearchKit
 
 class ViewController: UIViewController, ORKTaskViewControllerDelegate {
-
+    private var consentTaskController:ConsentTaskController = ConsentTaskController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,37 +24,10 @@ class ViewController: UIViewController, ORKTaskViewControllerDelegate {
     
     override func viewDidAppear(animated: Bool) {
 //        presentTask(helloTask)
-        presentTask(consentTask)
+        presentTask(consentTaskController.getConsentTask())
     }
     
-    private var consentDocument: ORKConsentDocument{
-        let consentDocument = ORKConsentDocument()
-        //prepare consent document (title, signatures,...)
-        
-        
-        //create sections in consent document
-        
-        let section1 = ORKConsentSection(type: ORKConsentSectionType.DataGathering)
-        section1.title = "The title of the section goes here ...";
-        section1.summary = "The summary about the section goes here ...";
-        section1.content = "The content to show in learn more ...";
-        //add sections into consent document
-        consentDocument.sections = [section1]
-        
-        return consentDocument
-    }
     
-    private var consentTask:ORKTask{
-        var steps = [ORKStep]()
-        //create visual consent step
-        let visualConsentStep = ORKVisualConsentStep(identifier: "visual_consent",document:consentDocument)
-        
-        //add visual consent step into the list of steps
-        steps += [visualConsentStep]
-        
-        //return consent task
-        return ORKOrderedTask(identifier: "consent_task", steps: steps)
-    }
     
     //create hello task (for testing)
     private var helloTask:ORKTask{
