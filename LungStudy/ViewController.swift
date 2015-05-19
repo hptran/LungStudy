@@ -11,6 +11,7 @@ import ResearchKit
 
 class ViewController: UIViewController, ORKTaskViewControllerDelegate {
     private var consentTaskController:ConsentTaskController = ConsentTaskController()
+    private var audioTaskController:AudioTaskController = AudioTaskController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +24,12 @@ class ViewController: UIViewController, ORKTaskViewControllerDelegate {
     }
     
     override func viewDidAppear(animated: Bool) {
+       
+        
+        //present task
+//        presentTask(consentTaskController.getConsentTask())
 //        presentTask(helloTask)
-        presentTask(consentTaskController.getConsentTask())
+        presentTask(audioTaskController.getAudioTask())
     }
     
     
@@ -40,9 +45,12 @@ class ViewController: UIViewController, ORKTaskViewControllerDelegate {
     
     //present task
     func presentTask(task:ORKTask){
-        //present the task
+        //create task view controller
         let taskViewController = ORKTaskViewController(task: task, taskRunUUID: nil)
         taskViewController.delegate = self
+        // Assign a directory to store `taskViewController` output.
+        taskViewController.outputDirectory = NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String, isDirectory: true)
+        //present the task
         presentViewController(taskViewController, animated: true, completion: nil)
     }
     

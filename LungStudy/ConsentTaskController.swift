@@ -6,21 +6,10 @@
 //  Copyright (c) 2015 huy. All rights reserved.
 //
 
-import Foundation
 import ResearchKit
 
 class ConsentTaskController{
-    private enum Identifier: String {
-        // Consent task specific identifiers.
-        case ConsentTask =                          "ConsentTask"
-        case VisualConsentStep =                    "VisualConsentStep"
-        case ConsentSharingStep =                   "ConsentSharingStep"
-        case ConsentReviewStep =                    "ConsentReviewStep"
-        case ConsentDocumentParticipantSignature =  "ConsentDocumentParticipantSignature"
-        case ConsentDocumentInvestigatorSignature = "ConsentDocumentInvestigatorSignature"
-    
-    }
-    
+        
     private var consentDocument: ORKConsentDocument{
         let consentDocument = ORKConsentDocument()
         //prepare consent document (title, signatures,...)
@@ -56,7 +45,7 @@ class ConsentTaskController{
     private var consentTask:ORKTask{
         var steps = [ORKStep]()
         //create visual consent step and add it to the list of steps
-        let visualConsentStep = ORKVisualConsentStep(identifier: "visual_consent",document:consentDocument)
+        let visualConsentStep = ORKVisualConsentStep(identifier: Identifier.VisualConsentStep.rawValue,document:consentDocument)
         steps += [visualConsentStep]
         
         //create consent sharing step and add it to the list of steps
@@ -79,7 +68,7 @@ class ConsentTaskController{
         //TODO: add investigator signature
         
         //return consent task
-        return ORKOrderedTask(identifier: "consent_task", steps: steps)
+        return ORKOrderedTask(identifier: Identifier.ConsentTask.rawValue, steps: steps)
     }
     
     func getConsentTask() ->ORKTask{

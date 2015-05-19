@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 huy. All rights reserved.
 //
 
-import Foundation
 import ResearchKit
 
 class ContentSection: ORKConsentSection{

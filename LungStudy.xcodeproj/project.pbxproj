@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEA9A5091B098BE1000B8D96 /* ConsentTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9A5081B098BE1000B8D96 /* ConsentTaskController.swift */; };
+		CEA9A50E1B09A54B000B8D96 /* ContentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9A50D1B09A54B000B8D96 /* ContentSection.swift */; };
+		CEA9A5101B0ACEDB000B8D96 /* AudioTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9A50F1B0ACEDB000B8D96 /* AudioTaskController.swift */; };
+		CEA9A5121B0ACF51000B8D96 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9A5111B0ACF51000B8D96 /* TaskController.swift */; };
 		CED705BC1B0836AA00B68AAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED705BB1B0836AA00B68AAA /* AppDelegate.swift */; };
 		CED705BE1B0836AA00B68AAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED705BD1B0836AA00B68AAA /* ViewController.swift */; };
 		CED705C11B0836AA00B68AAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED705BF1B0836AA00B68AAA /* Main.storyboard */; };
@@ -63,6 +67,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CEA9A5081B098BE1000B8D96 /* ConsentTaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsentTaskController.swift; path = LungStudy/ConsentTaskController.swift; sourceTree = "<group>"; };
+		CEA9A50D1B09A54B000B8D96 /* ContentSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentSection.swift; sourceTree = "<group>"; };
+		CEA9A50F1B0ACEDB000B8D96 /* AudioTaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTaskController.swift; sourceTree = "<group>"; };
+		CEA9A5111B0ACF51000B8D96 /* TaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		CED705B61B0836AA00B68AAA /* LungStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LungStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED705BA1B0836AA00B68AAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED705BB1B0836AA00B68AAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,10 +103,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CEA9A50C1B098C40000B8D96 /* TaskController */ = {
+			isa = PBXGroup;
+			children = (
+				CEA9A5111B0ACF51000B8D96 /* TaskController.swift */,
+				CEA9A5081B098BE1000B8D96 /* ConsentTaskController.swift */,
+				CEA9A50D1B09A54B000B8D96 /* ContentSection.swift */,
+				CEA9A50F1B0ACEDB000B8D96 /* AudioTaskController.swift */,
+			);
+			name = TaskController;
+			sourceTree = "<group>";
+		};
 		CED705AD1B0836AA00B68AAA = {
 			isa = PBXGroup;
 			children = (
 				CED706041B08382A00B68AAA /* ResearchKit.xcodeproj */,
+				CEA9A50C1B098C40000B8D96 /* TaskController */,
 				CED705B81B0836AA00B68AAA /* LungStudy */,
 				CED705CE1B0836AA00B68AAA /* LungStudyTests */,
 				CED705B71B0836AA00B68AAA /* Products */,
@@ -286,8 +306,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA9A5101B0ACEDB000B8D96 /* AudioTaskController.swift in Sources */,
+				CEA9A5091B098BE1000B8D96 /* ConsentTaskController.swift in Sources */,
 				CED705BE1B0836AA00B68AAA /* ViewController.swift in Sources */,
 				CED705BC1B0836AA00B68AAA /* AppDelegate.swift in Sources */,
+				CEA9A5121B0ACF51000B8D96 /* TaskController.swift in Sources */,
+				CEA9A50E1B09A54B000B8D96 /* ContentSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
